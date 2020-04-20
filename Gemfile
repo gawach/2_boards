@@ -36,6 +36,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '~> 4.0.0'
+gem 'mini_racer'
 gem 'kaminari'
 gem 'rails-i18n'
 
