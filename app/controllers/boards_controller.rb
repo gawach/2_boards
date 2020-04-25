@@ -38,6 +38,7 @@ class BoardsController < ApplicationController
         board: @board,
         error_messages: @board.errors.full_messages
       }
+    end
   end
 
   def destroy
