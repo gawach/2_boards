@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #
 class Tag < ApplicationRecord
-  has_many :board_tag_relations #has_manyの後ろは複数形になる！
-  has_many :boards, through: board_tag_relations
+  #has_manyの後ろは複数形になる！
+  has_many :board_tag_relations, dependent: :delete_all 
+  has_many :boards, through: board_tag_relations, dependent: :delete_all
 end
