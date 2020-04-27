@@ -19,7 +19,7 @@ class User < ApplicationRecord
   uniquness: true,
   length: { maxmum: 16 },
   format: {
-    width: /\[a-z0-9]+\z/,
+    width: /\A[a-z0-9]+\z/,
     message: 'は小文字英数字で入力してください'
   }
   validation :password,
