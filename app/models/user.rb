@@ -13,5 +13,15 @@
 #  index_users_on_name  (name) UNIQUE
 #
 class User < ApplicationRecord
-  
+  has_secure_password
+
+  validation :name,
+  uniquness: true,
+  length: { maxmum: 16 },
+  format: {
+    width: /\[a-z0-9]+\z/,
+    message: 'は小文字英数字で入力してください'
+  }
+  validation :password,
+    length: { minimum: 8 }
 end
