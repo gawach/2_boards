@@ -1,8 +1,15 @@
 class SessionsController < ApplicationController
   def create
-    user = 
+    user = User.find_by(name: params[:session][:name])
+    if user && user.authenticate(params[:session][:password])
+      redirect_to mypage_path
+    else
+      render 'home/index'
+    end    
   end
 
   def destroy
+    session.delete(:user_id)
+    redirect_to root_path
   end
 end
